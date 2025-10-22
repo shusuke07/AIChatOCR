@@ -18,39 +18,47 @@
   <main class="container" role="main">
     <header class="page-header">
       <h1>お問い合わせ</h1>
-      <p class="subtitle">ご意見・不具合報告・機能要望など、お気軽にお寄せください。</p>
+      <p class="subtitle">ご連絡方法・各種ポリシーはこちらから。</p>
     </header>
 
-    <form class="contact-form" action="#" method="post" novalidate>
-      <div class="form-row">
-        <label for="name">お名前</label>
-        <input id="name" name="name" type="text" placeholder="山田 太郎" autocomplete="name" required />
-      </div>
+    <section class="panel">
+      <h2 class="section-title">ご連絡</h2>
+      <ul class="link-list">
+        <li>
+          <a class="link-item" href="https://x.com/shusukehashimo" target="_blank" rel="noopener">
+            <span>X（旧Twitter） @shusukehashimo</span>
+            <span class="arrow">→</span>
+          </a>
+        </li>
+        <li>
+          <a class="link-item" href="mailto:aichatocr.supprt@gmail.com">
+            <span>メールで問い合わせ</span>
+            <span class="sub">aichatocr.supprt@gmail.com</span>
+          </a>
+        </li>
+      </ul>
+    </section>
 
-      <div class="form-row">
-        <label for="email">メールアドレス</label>
-        <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" inputmode="email" required />
+    <section class="panel policy">
+      <h2 class="section-title">各種ポリシー</h2>
+      <div class="policy-group">
+        <h3>プライバシーポリシー</h3>
+        <div class="policy-links">
+          <a href="https://shusuke07.github.io/AIChatOCR/privacypolicy_jp.html" target="_blank" rel="noopener">日本語</a>
+          <a href="https://shusuke07.github.io/AIChatOCR/privacypolicy_en.html" target="_blank" rel="noopener">English</a>
+        </div>
       </div>
-
-      <div class="form-row">
-        <label for="subject">件名</label>
-        <input id="subject" name="subject" type="text" placeholder="お問い合わせの件名" required />
+      <div class="policy-group">
+        <h3>利用規約</h3>
+        <div class="policy-links">
+          <a href="https://shusuke07.github.io/AIChatOCR/termsofservice_jp.html" target="_blank" rel="noopener">日本語</a>
+          <a href="https://shusuke07.github.io/AIChatOCR/termsofservice_en.html" target="_blank" rel="noopener">English</a>
+        </div>
       </div>
-
-      <div class="form-row">
-        <label for="message">本文</label>
-        <textarea id="message" name="message" rows="8" placeholder="できるだけ詳しくご記入ください" required></textarea>
-      </div>
-
-      <div class="form-actions">
-        <button type="submit" class="btn-primary">送信する</button>
-      </div>
-
-      <p class="notice">送信ボタンを押すと、入力内容の確認画面は表示されません。入力内容をご確認のうえ送信してください。</p>
-    </form>
+    </section>
 
     <footer class="page-footer">
-      <p>© <span id="year"></span> dScanAIChat</p>
+      <p>© <span id="year"></span> AIChatOCR</p>
     </footer>
   </main>
 
