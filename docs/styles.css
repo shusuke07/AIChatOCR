@@ -49,6 +49,8 @@ body { margin: 0; font-family: 'Inter', system-ui, -apple-system, Segoe UI, Robo
 /* Hero Section */
 .hero { text-align: center; padding: clamp(40px, 8vw, 80px) 0 clamp(32px, 6vw, 64px); }
 .hero-content { max-width: 720px; margin: 0 auto; }
+.hero-icon { width: clamp(80px, 15vw, 120px); height: clamp(80px, 15vw, 120px); margin: 0 auto 24px; display: block; border-radius: 22%; box-shadow: var(--shadow-lg); transition: transform 0.3s ease; }
+.hero-icon:hover { transform: scale(1.05); }
 .hero-title { margin: 0 0 16px; font-size: clamp(32px, 5vw, 56px); font-weight: 700; letter-spacing: -0.5px; line-height: 1.1; }
 .hero-subtitle { margin: 0 0 32px; font-size: clamp(16px, 2vw, 20px); color: var(--text-weak); line-height: 1.5; }
 .hero-nav { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 24px; }
