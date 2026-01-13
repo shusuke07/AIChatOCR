@@ -30,6 +30,10 @@
 
 *{ box-sizing: border-box; }
 html,body{ height:100%; }
+html{
+  /* fallback background (prevents body tiling seams) */
+  background: linear-gradient(180deg, var(--bg0), var(--bg1));
+}
 body{
   margin:0;
   font-family: var(--sans);
@@ -401,6 +405,12 @@ footer{ margin-top: 18px; color: rgba(255,255,255,.45); font-size: 12px; text-al
   body::before,
   body::after{
     content: none;
+  }
+  /* iOS Safari sometimes shows seams with multi-layer gradients; simplify */
+  body{
+    background: linear-gradient(180deg, var(--bg0), var(--bg1));
+    background-repeat: no-repeat;
+    background-attachment: scroll;
   }
 }
 .nav--sticky{
