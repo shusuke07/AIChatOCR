@@ -118,6 +118,9 @@ body::after{
   background: var(--surface-1);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  position: sticky;
+  top: 14px;
+  z-index: 10;
 }
 .topbar .brand b{ white-space: nowrap; }
 .lang-switch{
@@ -391,6 +394,31 @@ footer{ margin-top: 18px; color: rgba(255,255,255,.45); font-size: 12px; text-al
   body::after{
     content: none;
   }
+  .doc-head{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 12px;
+  }
+  .doc-head .brand{
+    padding: 6px 8px;
+  }
+  .doc-head .lang-switch{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    padding-right: 0;
+  }
+  .doc-head .lang-switch .chiplink{
+    width: 100%;
+    justify-content: center;
+    padding: 10px 10px;
+    font-size: 12px;
+  }
+  .doc-head .lang-switch .chiplink:last-child{
+    grid-column: 1 / -1; /* back button full width */
+  }
   .topbar{
     display: grid;
     grid-template-columns: 1fr;
@@ -474,16 +502,27 @@ body.doc{
   border-radius: var(--radius-xl);
   background: rgba(255,255,255,.06);
   box-shadow: var(--shadow-md);
-  overflow:hidden;
+  /* NOTE: keep overflow visible so .doc-head can be position: sticky */
+  overflow: visible;
 }
 .doc-head{
   display:flex; align-items:center; justify-content:space-between; gap:12px;
+  flex-wrap: wrap;
   padding: 14px 16px;
   border-bottom: 1px solid rgba(255,255,255,.10);
   background:
     radial-gradient(900px 240px at 20% 0%, rgba(52,211,255,.18), transparent 65%),
     radial-gradient(900px 240px at 80% 0%, rgba(139,92,246,.18), transparent 65%),
     rgba(255,255,255,.04);
+  position: sticky;
+  top: 14px;
+  z-index: 10;
+  border-top-left-radius: var(--radius-xl);
+  border-top-right-radius: var(--radius-xl);
+}
+.doc-head .lang-switch{
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 .doc-head b{ letter-spacing: -0.2px; }
 .doc-body{ padding: 18px 16px 18px; }
