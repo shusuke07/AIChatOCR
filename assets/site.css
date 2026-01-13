@@ -50,7 +50,7 @@ a:focus-visible{
 /* cyber background layers */
 body::before{
   content:"";
-  position: fixed;
+  position: absolute;
   inset: 0;
   pointer-events: none;
   z-index: 0;
@@ -71,7 +71,7 @@ body::before{
 }
 body::after{
   content:"";
-  position: fixed;
+  position: absolute;
   inset: 0;
   pointer-events: none;
   z-index: 0;
@@ -353,12 +353,23 @@ footer{ margin-top: 18px; color: rgba(255,255,255,.45); font-size: 12px; text-al
 /* LP pages */
 .nav{
   display:flex; align-items:center; justify-content:space-between; gap:12px;
+  flex-wrap: wrap;
   padding: 10px 12px;
   border: 1px solid var(--stroke);
   border-radius: 999px;
   background: rgba(255,255,255,.04);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+}
+.nav .brand{ flex: 1 1 auto; min-width: 160px; }
+.nav .lang-switch{ flex: 0 1 auto; flex-wrap: wrap; justify-content: flex-end; }
+.chiplink{ white-space: nowrap; }
+@media (max-width: 420px){
+  /* prevent per-character wrapping on very narrow screens */
+  .lang-switch{ gap: 6px; }
+  .lang-switch .chiplink{ padding: 8px 10px; font-size: 12px; }
+  /* move "back" link to next line to avoid squishing language chips */
+  .nav .lang-switch .chiplink:last-child{ flex-basis: 100%; justify-content: center; }
 }
 .nav--sticky{
   position: sticky;
