@@ -364,6 +364,10 @@ footer{ margin-top: 18px; color: rgba(255,255,255,.45); font-size: 12px; text-al
 
 /* iPhone layout: stack language + back nicely */
 @media (max-width: 520px){
+  body::before,
+  body::after{
+    content: none;
+  }
   .nav{
     display: grid;
     grid-template-columns: 1fr;
