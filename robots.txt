@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+User-agent: Google-adstxt
+Disallow:
 
 Sitemap: https://shusuke07.github.io/sitemap.xml
